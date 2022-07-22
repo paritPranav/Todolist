@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/css/styles.css"> -->
+    <title>Document</title>
+</head>
+<body>
+    <Center><% if(Day=="Sunday" || Day=="Saturday"){ %>
+        <h1>todats date is <%=date%> </h1>
+        <h1> Day is <%=Day%> (No work today) </h1>
+        <%} else{ %>
+            <h1>todats date is <%=date%> </h1>
+            <h1> Day is <%=Day%> (working Day) </h1>
+        <% }%>
+    <ul>
+        <% newWork.forEach(function(work) { %>
+            <form action="/delete" method="post">
+               
+                <span><%=work.Task %><span><button style="margin-left: 20px;" value="<%=work.Task%>" name="taskval" type="submit">X</button>
+            </form>
+
+          <% }) %>
+       
+            
+       
+    </ul>
+    <form action="/" method="post">
+        <input type="text" class="form" name="work" width="200px">
+        <button type="submit" class="form">ADD task</button>
+
+    </form>
+</Center>
+
+</body>
+</html>
+
+
+
+
+
+    
